@@ -4,7 +4,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.7910/DVN/LBMXJY.svg)](https://doi.org/10.7910/DVN/LBMXJY)
 
-[!Selected Package List](https://qut-dv25.dysec.io)
+[Selected Package List](https://qut-dv25.dysec.io)
 
 ## Overview
 
