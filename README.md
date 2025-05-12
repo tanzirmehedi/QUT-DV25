@@ -12,6 +12,10 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ![The isolated testbed configuration visualization for QUT-DV25](images/Testbed-V1.jpg)
 
+<p align="center">
+  <img src="Images/Testbed-V1.jpg" width="500"/>
+</p>
+
 ## Citation
 
 If you use this dataset in your research, please cite it as:
