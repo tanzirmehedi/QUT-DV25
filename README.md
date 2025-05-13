@@ -58,8 +58,8 @@ These traces enable in-depth behavioral analysis for identifying indicators of c
 | Missing cells (%)            | 0.0%         |
 | Duplicate rows               | 0            |
 | Duplicate rows (%)           | 0.0%         |
-| Total size in memory         | 33.3 MiB     |
-| Average record size in memory| 2.4 KiB      |
+| Total raw data size in memory| 2.2 TB       |
+| Total processed data size    | 3.6 GB       |
 
 ### Variable Types
 
