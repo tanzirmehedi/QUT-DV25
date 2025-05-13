@@ -48,7 +48,7 @@ These traces enable in-depth behavioral analysis for identifying indicators of c
 
 `Dynamic Analysis` `Malicious Detection` `Software Supply Chain` `PyPI` `Security` `eBPF` `Behavioral Traces`
 
-## 🧩 Dataset Statistics
+## Dataset Statistics
 
 | Statistic                     | Value        |
 |------------------------------|--------------|
@@ -61,7 +61,7 @@ These traces enable in-depth behavioral analysis for identifying indicators of c
 | Total size in memory         | 33.3 MiB     |
 | Average record size in memory| 2.4 KiB      |
 
-### 📊 Variable Types
+### Variable Types
 
 | Type        | Count |
 |-------------|-------|
@@ -69,7 +69,7 @@ These traces enable in-depth behavioral analysis for identifying indicators of c
 | Categorical | 9     |
 | Numeric     | 11    |
 
-## 🧪 eBPF-Based Feature Sets
+## eBPF-Based Feature Sets
 
 The following feature sets are extracted using **eBPF tracing** during package execution. Each set corresponds to a specific behavioral trace type for a package.
 
@@ -83,7 +83,7 @@ The following feature sets are extracted using **eBPF tracing** during package e
 | `Pattern Traces` | **Behavioral patterns** — Extracts sequence patterns in execution (e.g., I/O loops, memory access, or payload triggers). |
 
 
-## 🔍 Feature Definitions and Examples
+## Feature Definitions and Examples
 
 ### 1. General Package Information
 
