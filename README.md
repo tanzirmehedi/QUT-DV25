@@ -15,6 +15,27 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 </p>
 <p align="center"><em>Figure 1: The isolated testbed configuration visualization for QUT-DV25</em></p>
 
+## Dataset Statistics
+
+| Statistic                     | Value        |
+|------------------------------|--------------|
+| Number of variables          | 38           |
+| Number of observations       | 14,271       |
+| Missing cells                | 0            |
+| Missing cells (%)            | 0.0%         |
+| Duplicate rows               | 0            |
+| Duplicate rows (%)           | 0.0%         |
+| Total size in memory         | 33.3 MiB     |
+| Average record size in memory| 2.4 KiB      |
+
+### Variable Types
+
+| Type        | Count |
+|-------------|-------|
+| Text        | 18    |
+| Categorical | 9     |
+| Numeric     | 11    |
+
 ## Citation
 
 If you use this dataset in your research, please cite it as:
