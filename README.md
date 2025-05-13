@@ -46,7 +46,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 2. Process & Data Transfer Behavior
+### 2. Filetop Traces (Process & Data Transfer Behavior)
 
 | Feature Name           | Definition                                                             | Example                                      |
 |------------------------|------------------------------------------------------------------------|----------------------------------------------|
@@ -58,7 +58,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 3. Dependency Information
+### 3. Install Traces (Dependency Information)
 
 | Feature Name            | Definition                                      | Example                                    |
 |-------------------------|-------------------------------------------------|--------------------------------------------|
@@ -68,7 +68,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 4. Directory Access Patterns
+### 4. Opensnoop Traces (Directory Access Patterns)
 
 | Feature Name         | Definition                                             | Example                                               |
 |----------------------|--------------------------------------------------------|--------------------------------------------------------|
@@ -82,7 +82,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 5. Network Behavior
+### 5. TCP Traces (Network Behavior)
 
 | Feature Name         | Definition                                             | Example                                |
 |----------------------|--------------------------------------------------------|----------------------------------------|
@@ -94,7 +94,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 6. System Call Categories
+### 6. SysCall Traces (System Call Categories)
 
 | Feature Name          | Definition                                          | Example                                   |
 |-----------------------|-----------------------------------------------------|-------------------------------------------|
@@ -107,7 +107,7 @@ QUT-DV25 is a comprehensive dataset designed to support research into the detect
 
 ---
 
-### 7. Behavioral Patterns (System Call Sequences)
+### 7. Pattern Traces (Behavioral Patterns-System Call Sequences)
 
 | Feature Name  | Pattern Description                         | Example Sequence                            |
 |---------------|----------------------------------------------|---------------------------------------------|
