@@ -31,14 +31,14 @@ These traces enable in-depth behavioral analysis for identifying indicators of c
 ## Dataset Details
 
 - **Publication Date**: May 8, 2025  
-- **Data Collection Period**: June 1, 2024 – December 28, 2024  
-- **Time Coverage**: June 1, 2024 – May 7, 2025  
+- **Data Collection Period**: June 1, 2024 - December 28, 2024  
+- **Time Coverage**: June 1, 2024 - May 7, 2025  
 - **Languages**: English  
 - **Data Type**: Raw trace files and processed CSV data  
 - **Software Used**:
   - eBPF v0.20.0
   - Ubuntu 24.4 LTS
-  - Python 3.8–3.12
+  - Python 3.8-3.12
   - bpftool v7.4.0
   - bpftrace v0.20.2
   - linux-headers 6.8.0-1012-raspi
