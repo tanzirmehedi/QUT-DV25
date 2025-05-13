@@ -75,12 +75,12 @@ The following feature sets are extracted using **eBPF tracing** during package e
 
 | **Feature Set** | **Description** |
 |-----------------|-----------------|
-| `Filetop Traces` | **File I/O processes** — Captures file access patterns; useful to detect abnormal access or missing critical files. |
-| `Install Traces` | **Installation traces** — Logs installation-time events; detects indirect or hidden dependency installs used maliciously. |
-| `Opensnoop Traces` | **File open attempts** — Monitors system calls to open files; flags access to sensitive or protected directories. |
-| `TCP Traces` | **TCP activity** — Captures network traffic during execution; useful to detect contact with suspicious or blacklisted IPs. |
-| `SysCall Traces` | **System call traces** — Logs low-level system interactions; can indicate privilege escalation, sabotage, or misuse. |
-| `Pattern Traces` | **Behavioral patterns** — Extracts sequence patterns in execution (e.g., I/O loops, memory access, or payload triggers). |
+| `Filetop Traces` | **File I/O processes** - Captures file access patterns; useful to detect abnormal access or missing critical files. |
+| `Install Traces` | **Installation traces** - Logs installation-time events; detects indirect or hidden dependency installs used maliciously. |
+| `Opensnoop Traces` | **File open attempts** - Monitors system calls to open files; flags access to sensitive or protected directories. |
+| `TCP Traces` | **TCP activity** - Captures network traffic during execution; useful to detect contact with suspicious or blacklisted IPs. |
+| `SysCall Traces` | **System call traces** - Logs low-level system interactions; can indicate privilege escalation, sabotage, or misuse. |
+| `Pattern Traces` | **Behavioral patterns** - Extracts sequence patterns in execution (e.g., I/O loops, memory access, or payload triggers). |
 
 
 ## Feature Definitions and Examples
