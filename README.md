@@ -180,7 +180,7 @@ The following feature sets are extracted using **eBPF tracing** during package e
 ---
 
 # CROISSANT VALIDATION REPORT
-================================================================================
+
 ## VALIDATION RESULTS
 --------------------------------------------------------------------------------
 Starting validation for file: UpdatedCroissant.json
@@ -194,7 +194,7 @@ The dataset passes Croissant validation.
 ✓
 No record sets found to validate.
 ## JSON-LD REFERENCE
-================================================================================
+
 ```json
 {
   "@context": {
