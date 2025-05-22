@@ -3,6 +3,7 @@
 **A Dataset for Dynamic Analysis of Next-Gen Software Supply Chain Attacks**
 
 Dataset: [![DOI](https://zenodo.org/badge/DOI/10.7910/DVN/LBMXJY.svg)](https://doi.org/10.7910/DVN/LBMXJY)
+
 Dataset Paper: [![DOI](https://zenodo.org/badge/DOI/10.48550/arXiv.2505.13804.svg)](https://doi.org/10.48550/arXiv.2505.13804)
 
 [Selected Package List](https://qut-dv25.dysec.io)
