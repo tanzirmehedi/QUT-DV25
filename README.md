@@ -2,7 +2,8 @@
 
 **A Dataset for Dynamic Analysis of Next-Gen Software Supply Chain Attacks**
 
-[![DOI](https://zenodo.org/badge/DOI/10.7910/DVN/LBMXJY.svg)](https://doi.org/10.7910/DVN/LBMXJY)
+Dataset: [![DOI](https://zenodo.org/badge/DOI/10.7910/DVN/LBMXJY.svg)](https://doi.org/10.7910/DVN/LBMXJY)
+Dataset Paper: [![DOI](https://zenodo.org/badge/DOI/10.48550/arXiv.2505.13804.svg)](https://doi.org/10.48550/arXiv.2505.13804)
 
 [Selected Package List](https://qut-dv25.dysec.io)
 
@@ -27,6 +28,10 @@ The dataset includes six types of behavioral traces collected during package ins
 - **TCP Traces**: Track outbound network connections and port usage to detect remote access or anomalous traffic.
 
 These traces enable in-depth behavioral analysis for identifying indicators of compromise and software supply chain threats.
+
+## Data Source
+
+The dataset was built from dynamic analysis traces of Python packages executed in sandboxed environments using eBPF-based monitoring during install-time and post-install-time. Malicious samples were sourced from confirmed threat reports and verified incidents. Benign packages were carefully selected from trusted PyPI projects as counterparts to the malicious samples for balanced comparison.
 
 ## Dataset Details
 
