@@ -183,6 +183,200 @@ The following feature sets are extracted using **eBPF tracing** during package e
 
 ---
 
+# System Setup and Run Instructions
+
+## Testbed and Infrastructure
+
+### Router Configuration
+
+| Parameter     | Value               |
+|--------------|---------------------|
+| Address      | 192.168.0.1         |
+| SSID (5G)    | *(Your 5G SSID)*    |
+| SSID (2.4G)  | *(Your 2.4G SSID)*  |
+| Password     | *(Router password)* |
+
+### Raspberry Pi Clusters
+
+**Operating System**: Ubuntu 24.04 LTS (64-bit)
+
+#### Cluster 1 (TruNETS-QUT-1 to 8)
+
+| Hostname           | IP Address      | Memory |
+|--------------------|-----------------|--------|
+| TruNETS-QUT-1.local | 192.168.0.50   | 4GB    |
+| TruNETS-QUT-2.local | 192.168.0.51   | 4GB    |
+| TruNETS-QUT-3.local | 192.168.0.52   | 4GB    |
+| TruNETS-QUT-4.local | 192.168.0.53   | 4GB    |
+| TruNETS-QUT-5.local | 192.168.0.54   | 4GB    |
+| TruNETS-QUT-6.local | 192.168.0.55   | 4GB    |
+| TruNETS-QUT-7.local | 192.168.0.56   | 4GB    |
+| TruNETS-QUT-8.local | 192.168.0.57   | 4GB    |
+
+#### Cluster 2 (TruNETS-QUT-9 to 16)
+
+| Hostname            | IP Address      | Memory |
+|---------------------|-----------------|--------|
+| TruNETS-QUT-9.local  | 192.168.0.58   | 4GB    |
+| TruNETS-QUT-10.local | 192.168.0.59   | 4GB    |
+| TruNETS-QUT-11.local | 192.168.0.60   | 4GB    |
+| TruNETS-QUT-12.local | 192.168.0.61   | 4GB    |
+| TruNETS-QUT-13.local | 192.168.0.62   | 16GB   |
+| TruNETS-QUT-14.local | 192.168.0.63   | 4GB    |
+| TruNETS-QUT-15.local | 192.168.0.64   | 4GB    |
+| TruNETS-QUT-16.local | 192.168.0.65   | 4GB    |
+
+---
+
+### Connecting to a Node
+
+1. **Connect to the router Wi-Fi**  
+2. **Access a Pi node via SSH:**
+
+```
+ssh <username>@TruNETS-QUT-14.local
+```
+### SSH Setup
+
+To check and enable SSH service:
+
+```
+sudo systemctl status ssh
+sudo apt update
+sudo apt install openssh-server
+sudo systemctl start ssh
+sudo systemctl enable ssh
+```
+
+---
+
+### UFW Firewall Configuration
+
+To allow SSH through the firewall and enable UFW:
+
+```
+sudo ufw status
+sudo ufw allow ssh
+sudo ufw enable
+```
+
+---
+
+### Hostname and DNS Setup
+
+To configure a custom hostname and enable local DNS resolution:
+
+```
+sudo nano /etc/hostname
+sudo nano /etc/hosts
+sudo systemctl restart systemd-logind.service
+```
+
+To enable `.local` resolution with Avahi:
+
+```
+sudo apt update
+sudo apt install avahi-daemon
+sudo systemctl start avahi-daemon
+sudo systemctl enable avahi-daemon
+```
+
+---
+
+## Optional: Remote Desktop (XRDP)
+
+Install a desktop environment and XRDP service:
+
+```
+sudo apt update
+sudo apt install ubuntu-desktop
+sudo apt install xrdp xorg
+sudo adduser xrdp ssl-cert
+sudo ufw allow 3389/tcp
+```
+
+Check XRDP status:
+
+```
+xrdp --version
+sudo systemctl status xrdp
+```
+
+---
+
+## eBPF Monitoring Environment Setup
+
+### Install Dependencies
+
+Install eBPF tools and headers:
+
+```
+sudo apt install bpfcc-tools linux-headers-$(uname -r)
+sudo apt install linux-tools-$(uname -r)
+sudo apt install bpftrace
+```
+
+### Check Installed Tools
+
+```
+bpftool --version
+sudo bpftool feature
+bpftrace --version
+```
+
+---
+
+## Dynamic Package Monitoring Workflow
+
+### Step 1: Create Virtual Environment
+
+```
+pip install virtualenv --break-system-packages
+virtualenv packageName_env_tr
+source packageName_env_tr/bin/activate
+```
+
+---
+
+### Step 2: Optional System Dependencies
+
+Install additional dependencies (if required by the package):
+
+```
+sudo apt-get install libx11-dev libxtst-dev
+```
+
+---
+
+### Step 3: Start eBPF Monitor
+
+Run your eBPF monitoring script:
+
+```bash
+sudo ./monitor.sh
+```
+
+---
+
+### Step 4: Install Target Package
+
+Install the package you wish to monitor:
+
+```
+pip install <package-name>
+```
+
+---
+
+### Step 5: Deactivate Environment
+
+Exit the virtual environment after analysis:
+
+```
+deactivate
+```
+
+
 # Croissant Validation Report
 
 ## Validation Results
