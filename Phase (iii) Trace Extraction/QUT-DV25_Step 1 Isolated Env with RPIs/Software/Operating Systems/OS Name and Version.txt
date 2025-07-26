@@ -1,0 +1,5 @@
+1. respberry-pi-2022-07-01-raspios-bullseye-i386.iso
+2. ubuntu-24.04-desktop-amd64.iso
+3. Windows-11_23H2_English-International_x64v2.iso 
+
+You can download these OSs from the official server.
