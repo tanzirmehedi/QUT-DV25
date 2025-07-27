@@ -376,6 +376,267 @@ Exit the virtual environment after analysis:
 deactivate
 ```
 
+# Run Instructions
+
+### 1. Prerequisites
+
+#### 1.1 System Requirements
+- **OS:** Linux (Ubuntu 20.04+) or Windows with WSL2
+- **Disk:** 50 GB free space
+- **RAM:** 8 GB minimum
+- **GPU:** CUDA-enabled (for DL)
+
+#### 1.2 Software Dependencies
+```bash
+sudo apt update
+sudo apt install -y python3 python3-pip git gcc make
+```
+
+#### 1.3 Python Libraries
+```bash
+pip install -r requirements.txt
+```
+
+**requirements.txt**:
+```
+numpy
+pandas
+matplotlib
+scikit-learn
+torch
+torchvision
+transformers
+networkx
+jupyter
+notebook
+tqdm
+requests
+beautifulsoup4
+```
+
+---
+
+## 2. Folder Structure
+
+```
+QUT-DV25/
+├── Phase (i) Dataset Collection/
+│   ├── QUT-DV25_Step 1 Malicious Package Info/
+│   │   ├── MaliciousPackagesNameAndVersion.ipynb
+│   │   ├── Analysis_MaliciousPackagesNameAndVersion.ipynb
+│   ├── QUT-DV25_Step 2 Malicious Packages Info Check From Different Sources/
+│   │   ├── MaliciousPackagesDetailsFromDifferentWebsites.ipynb
+│   │   ├── Analysis_MaliciousPackagesDetailsFromDifferentWebsites.ipynb
+│   ├── QUT-DV25_Step 3 Similarity Algorithms Implementation/
+│   │   ├── FileAnalysis.ipynb
+│   │   ├── runSimilarityChecking.sh
+│   │   ├── SimilarityCheck.py
+│   │   ├── Analysis_SimilarityAlgorithms-SearchBenignPackages.ipynb
+│   ├── QUT-DV25_Step 4 Counterpart Benign Packages/
+│   │   ├── CounterpartBenignPackages.ipynb
+│   │   ├── DownloadSelectedBenignPackages.ipynb
+│   │   ├── FinalSelectedBenignPackages.ipynb
+│   │   ├── Analysis_CounterpartBenignPackages.ipynb
+│
+├── Phase (ii) Dataset Labeling and Validation/
+│   ├── QUT-DV25_Step 1 Malicious Validation Report and Labeling/
+│   │   ├── MaliciousValidatorHPC.ipynb
+│   │   ├── run.sh
+│   │   ├── validation.py
+│   │   ├── Analysis_MaliciousValidator.ipynb
+│   ├── QUT-DV25_Step 2 Benign Validation Report and Labeling/
+│   │   ├── BenignValidationHPC.ipynb
+│   │   ├── benign_run.sh
+│   │   ├── benign_validation.py
+│   │   ├── Analysis_BenignValidator.ipynb
+│   ├── QUT-DV25_Step 3 Malicious Packages Metadata and Static Dataset/
+│   │   ├── MaliciousPackagesDetailsFromFiles.ipynb
+│   │   ├── Analysis_MaliciousPackagesDetailsFromFiles.ipynb
+│
+├── Phase (iii) Trace Extraction/
+│   ├── QUT-DV25_Step 1 Isolated Env with RPIs/
+│   │   ├── Environment Setup with eBPF Program and Linux Guidelines
+│   ├── QUT-DV25_Step 2 Malicious Packages Traces/
+│   │   ├── prerequisites.sh
+│   │   ├── trace.sh
+│   │   ├── monitor.sh
+│   ├── QUT-DV25_Step 3 Benign Packages Traces/
+│   │   ├── prerequisites.sh
+│   │   ├── trace.sh
+│   │   ├── monitor.sh
+│
+├── Technical Validation and Benchmarks/
+│   ├── QUT-DV25_Step 1 Traces Preprocessing-Feature Engineering/
+│   │   ├── Preprocessing-0.ipynb
+│   │   ├── Preprocessing-1.ipynb
+│   │   ├── Preprocessing-2.ipynb
+│   ├── QUT-DV25_Step 2 Traditional ML Implementation/
+│   │   ├── Dynamic Analysis/
+│   │   │   ├── CombinedTraces/
+│   │   │   │   ├── TML_CombinedTraces.ipynb
+│   │   │   ├── FiletopTraces/
+│   │   │   │   ├── TML FiletopTraces.ipynb
+│   │   │   ├── InstallTraces/
+│   │   │   │   ├── TML InstallTraces.ipynb
+│   │   │   ├── OpensnoopTraces/
+│   │   │   │   ├── TML OpensnoopTraces.ipynb
+│   │   │   ├── PatternTraces/
+│   │   │   │   ├── TML CombinedPatternTraces.ipynb
+│   │   │   ├── StemtemCallTraces/
+│   │   │   │   ├── TML SystemCallTraces.ipynb
+│   │   │   ├── TCPTraces/
+│   │   │   │   ├── TML TCPTraces.ipynb
+│   │   ├── Metadata Analysis/
+│   │   │   ├── MetadataAnalysis.ipynb
+│   │   ├── Static Analysis/
+│   │   │   ├── StaticAnalysis.ipynb
+│   ├── QUT-DV25_Step 3 DL Implementation/
+│   │   ├── CNN/
+│   │   │   ├── CNN_Training and Validation.ipynb
+│   │   │   ├── CNN_Training and Validation Graphs.ipynb
+│   │   ├── Transformer Model/
+│   │   │   ├── Transformer Model.ipynb
+│
+├── Run Procedure for Model Training and Evaluation.pdf
+├── Details Overview of QUT-DV25 Datasets.pdf
+├── README.md
+```
+
+---
+
+## 3. Run Procedure by Phase
+
+### 3.1 Phase (i) Dataset Collection
+
+#### Step 1: Malicious Package Info
+```bash
+cd 'Phase (i) Dataset Collection/QUT-DV25_Step 1 Malicious Package Info'
+python -m notebook MaliciousPackagesNameAndVersion.ipynb
+python -m notebook Analysis_MaliciousPackagesNameAndVersion.ipynb
+```
+
+#### Step 2: Info Check From Sources
+```bash
+cd '../QUT-DV25_Step 2 Malicious Packages Info Check From Different Sources'
+python -m notebook MaliciousPackagesDetailsFromDifferentWebsites.ipynb
+python -m notebook Analysis_MaliciousPackagesDetailsFromDifferentWebsites.ipynb
+```
+
+#### Step 3: Similarity Algorithms
+```bash
+cd '../QUT-DV25_Step 3 Similarity Algorithms Implementation'
+bash runSimilarityChecking.sh
+python SimilarityCheck.py
+python -m notebook FileAnalysis.ipynb
+python -m notebook Analysis_SimilarityAlgorithms-SearchBenignPackages.ipynb
+```
+
+#### Step 4: Counterpart Benign Packages
+```bash
+cd '../QUT-DV25_Step 4 Counterpart Benign Packages'
+python -m notebook CounterpartBenignPackages.ipynb
+python -m notebook DownloadSelectedBenignPackages.ipynb
+python -m notebook FinalSelectedBenignPackages.ipynb
+python -m notebook Analysis_CounterpartBenignPackages.ipynb
+```
+
+### 3.2 Phase (ii) Dataset Labeling and Validation
+
+#### Step 1: Malicious Validation
+```bash
+cd 'Phase (ii) Dataset Labeling and Validation/QUT-DV25_Step 1 Malicious Validation Report and Labeling'
+bash run.sh
+python validation.py
+python -m notebook MaliciousValidatorHPC.ipynb
+python -m notebook Analysis_MaliciousValidator.ipynb
+```
+
+#### Step 2: Benign Validation
+```bash
+cd '../QUT-DV25_Step 2 Benign Validation Report and Labeling'
+bash benign_run.sh
+python benign_validation.py
+python -m notebook BenignValidatorHPC.ipynb
+python -m notebook Analysis_BenignValidator.ipynb
+```
+
+#### Step 3: Static and Metadata
+```bash
+cd '../QUT-DV25_Step 3 Malicious Packages Metadata and Static Dataset'
+python -m notebook MaliciousPackagesDetailsFromFiles.ipynb
+python -m notebook Analysis_MaliciousPackagesDetailsFromFiles.ipynb
+```
+
+### 3.3 Phase (iii) Trace Extraction
+
+> **Note:** Must be executed in a Linux-based isolated environment.
+
+#### Step 1: Setup Environment
+```bash
+cd 'Phase (iii) Trace Extraction/QUT-DV25_Step 1 Isolated Env with RPIs'
+```
+> Follow the eBPF and kernel installation guide provided in the directory.
+
+#### Step 2 & 3: Run Trace Scripts
+```bash
+cd '../QUT-DV25_Step 2 Malicious Packages Traces'
+bash prerequisites.sh
+bash trace.sh
+bash monitor.sh
+
+cd '../../QUT-DV25_Step 3 Benign Packages Traces'
+bash prerequisites.sh
+bash trace.sh
+bash monitor.sh
+```
+
+---
+
+## 4. Technical Validation and Benchmarks
+
+### Step 1: Preprocessing and Feature Engineering
+```bash
+cd 'Technical Validation and Benchmarks/QUT-DV25_Step 1 Traces Preprocessing-Feature Engineering'
+python -m notebook Preprocessing-0.ipynb
+python -m notebook Preprocessing-1.ipynb
+python -m notebook Preprocessing-2.ipynb
+```
+
+### Step 2: Traditional ML Implementation
+```bash
+cd '../QUT-DV25_Step 2 Traditional ML Implementation/Dynamic Analysis/CombinedTraces'
+python -m notebook TML_CombinedTraces.ipynb
+```
+Repeat for:
+- FiletopTraces/
+- InstallTraces/
+- OpensnoopTraces/
+- PatternTraces/
+- SystemCallTraces/
+- TCPTraces/
+
+Metadata & Static Analysis:
+```bash
+cd '../../Metadata Analysis'
+python -m notebook MetadataAnalysis.ipynb
+cd '../../Static Analysis'
+python -m notebook StaticAnalysis.ipynb
+```
+
+### Step 3: DL Implementation
+
+CNN Model:
+```bash
+cd '../../QUT-DV25_Step 3 DL Implementation/CNN'
+python -m notebook CNN_Training and Validation.ipynb
+python -m notebook CNN_Training and Validation Graphs.ipynb
+```
+
+Transformer Model:
+```bash
+cd '../Transformer Model'
+python -m notebook Transformer Model.ipynb
+```
 
 # Croissant Validation Report
 
