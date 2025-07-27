@@ -183,7 +183,7 @@ The following feature sets are extracted using **eBPF tracing** during package e
 
 ---
 
-# System Setup and Run Instructions
+# Environment Setup Instructions
 
 ## Testbed and Infrastructure
 
