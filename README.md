@@ -104,7 +104,7 @@ The following table summarises the descriptive statistics extracted from benign 
 |  | Security_Operations | 0.36 | 0.48 | 0 | 2 | 3.70 | 4.90 | 0 | 21 |
 |  | Process_Operations | 91.27 | 119.80 | 0 | 4687 | 37.73 | 196.23 | 0 | 16307 |
 
-## Descriptive Statistics of the Raw Dataset (Across Pattern Trace Types)
+## Descriptive Statistics of the Raw Dataset Across Pattern Trace Types
 
 The following table summarises the descriptive statistics extracted from benign (B) and malicious (M) traces across different pattern categories.
 
