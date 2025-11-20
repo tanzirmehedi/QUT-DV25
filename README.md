@@ -56,7 +56,7 @@ The dataset was built from dynamic analysis traces of Python packages executed i
 
 | Statistic                     | Value        |
 |------------------------------|--------------|
-| Number of variables          | 38           |
+| Number of variables          | 36           |
 | Number of observations       | 14,271       |
 | Missing cells                | 0            |
 | Missing cells (%)            | 0.0%         |
@@ -69,9 +69,59 @@ The dataset was built from dynamic analysis traces of Python packages executed i
 
 | Type        | Count |
 |-------------|-------|
-| Text        | 18    |
-| Categorical | 9     |
-| Numeric     | 11    |
+| Categorical | 14    |
+| Numerical   | 11    |
+| Pattern     | 11    |
+
+## Descriptive Statistics of the Raw Dataset Across Numerical Trace Types
+
+The following table summarises the descriptive statistics extracted from benign (B) and malicious (M) traces across different pattern categories.
+
+| **Traces** | **Features** | **Mean (B)** | **SD (B)** | **Min (B)** | **Max (B)** | **Mean (M)** | **SD (M)** | **Min (M)** | **Max (M)** |
+|------------|--------------|--------------|------------|-------------|-------------|--------------|------------|-------------|-------------|
+| Filetop | Read_Processes | 18.06 | 19.31 | 0 | 223 | 10.35 | 10.89 | 0 | 207 |
+|  | Write_Processes | 1683.29 | 1443.39 | 0 | 10250 | 1680.23 | 1342.18 | 0 | 9152 |
+|  | Read_Data_Transfer | 15.63 | 23.06 | 0 | 432 | 4.55 | 7.46 | 0 | 86 |
+|  | Write_Data_Transfer | 14.87 | 21.92 | 0 | 418 | 5.12 | 8.03 | 0 | 90 |
+| Install | Total_Dependency | 6.02 | 11.48 | 0 | 685 | 0.91 | 2.74 | 0 | 56 |
+|  | Direct_Dependency | 1.84 | 4.13 | 0 | 116 | 0.03 | 0.07 | 0 | 4 |
+|  | Indirect_Dependency | 4.15 | 12.60 | 0 | 569 | 0.75 | 3.23 | 0 | 52 |
+| Opensnoop | Root_DIR_Access | 51.54 | 72.73 | 10 | 582 | 87.17 | 139.07 | 16 | 951 |
+|  | Temp_DIR_Access | 148.33 | 341.18 | 0 | 3305 | 65.28 | 133.19 | 0 | 1066 |
+|  | Home_DIR_Access | 1659.03 | 1505.30 | 0 | 11085 | 811.40 | 722.73 | 0 | 5279 |
+|  | User_DIR_Access | 1796.54 | 3100.67 | 176 | 64391 | 3212.86 | 4161.69 | 82 | 46354 |
+|  | Sys_DIR_Access | 646.35 | 545.65 | 6 | 9731 | 290.48 | 190.13 | 5 | 762 |
+|  | Etc_DIR_Access | 757.75 | 1422.77 | 41 | 22061 | 779.00 | 1619.00 | 14 | 19966 |
+|  | Other_DIR_Access | 3012.21 | 3329.42 | 17 | 21481 | 1570.21 | 1769.97 | 83 | 12240 |
+| TCP | Local_IPs_Access | 2.19 | 1.31 | 2 | 5 | 2.39 | 0.84 | 1 | 6 |
+|  | Remote_IPs_Access | 91.30 | 116.70 | 0 | 652 | 38.19 | 28.76 | 0 | 98 |
+|  | Local_Port_Access | 210.73 | 148.43 | 0 | 998 | 97.56 | 81.20 | 0 | 743 |
+|  | Remote_Port_Access | 22.44 | 26.27 | 0 | 91 | 11.39 | 9.17 | 0 | 56 |
+| Syscall | IO_Operations | 5249.67 | 28662.64 | 0 | 1147052 | 794.65 | 3302.19 | 0 | 123576 |
+|  | File_Operations | 13.11 | 1.93 | 0 | 17 | 10.49 | 3.53 | 0 | 16 |
+|  | Network_Operations | 107.30 | 48.86 | 0 | 245 | 48.92 | 50.38 | 0 | 588 |
+|  | Time_Operations | 6.27 | 6.56 | 0 | 210 | 2.50 | 4.45 | 0 | 66 |
+|  | Security_Operations | 0.36 | 0.48 | 0 | 2 | 3.70 | 4.90 | 0 | 21 |
+|  | Process_Operations | 91.27 | 119.80 | 0 | 4687 | 37.73 | 196.23 | 0 | 16307 |
+
+## Descriptive Statistics of the Raw Dataset (Across Pattern Trace Types)
+
+The following table summarises the descriptive statistics extracted from benign (B) and malicious (M) traces across different pattern categories.
+
+| **Trace Type** | **Feature** | **Patterns (B)** | **Patterns (M)** | **N-grams (B)** | **N-grams (M)** | **Avg N-grams (B)** | **Avg N-grams (M)** |
+|----------------|-------------|------------------|------------------|------------------|------------------|----------------------|----------------------|
+| TCP | State_TRX | 102 | 63 | 7,144 | 7,127 | 1.0 | 1.0 |
+| Pattern | Pattern_1 | 3 | 4 | 7,144 | 6,768 | 1.000 | 0.950 |
+|  | Pattern_2 | 2 | 4 | 7,125 | 6,618 | 0.997 | 0.929 |
+|  | Pattern_3 | 3 | 1 | 7,122 | 6,609 | 0.997 | 0.927 |
+|  | Pattern_4 | 4 | 6 | 7,122 | 6,609 | 0.997 | 0.927 |
+|  | Pattern_5 | 2 | 2 | 7,122 | 6,607 | 0.997 | 0.927 |
+|  | Pattern_6 | 1 | 3 | 7,122 | 6,618 | 0.997 | 0.929 |
+|  | Pattern_7 | 1 | 2 | 7,122 | 6,618 | 0.997 | 0.929 |
+|  | Pattern_8 | 2 | 1 | 7,122 | 6,607 | 0.997 | 0.927 |
+|  | Pattern_9 | 2 | 3 | 7,122 | 6,607 | 0.997 | 0.927 |
+|  | Pattern_10 | 2 | 9 | 7,122 | 6,607 | 0.997 | 0.927 |
+
 
 ## eBPF-Based Feature Sets
 
